@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:27:08 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/16 14:47:47 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/17 13:43:50 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@
 class Cat : public Animal {
 public:
 	Cat( void );
-	// Cat( std::string const aType );
-	void makeSound();	
+	Cat( const Cat& copy );
+	Cat& operator=( const Cat& input );
 	~Cat( void );
+	void makeSound() const;
+	std::string getType( void );
 };
 
 #endif
