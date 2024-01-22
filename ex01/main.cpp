@@ -18,33 +18,12 @@
 
 int main()
 {
-	const Animal* meta = new Animal();
+	//const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	const WrongAnimal* cool = new WrongAnimal();
-	const WrongAnimal* k = new WrongCat();
-	
-	std::cout << "--------------------//--------------------" << std::endl;
-	std::cout << "Animal types: \n";
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << k->getType() << " " << std::endl;
+	delete j;
+	delete i;
 
-	std::cout << "--------------------//--------------------" << std::endl;
-	std::cout << "Animal makeSound with virtual: \n";
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-
-	std::cout << "--------------------//--------------------" << std::endl;
-	std::cout << "WrongAnimal makeSound without virtual: \n";
-	k->makeSound(); //will output the wrongcat sound!
-
-	std::cout << "--------------------//--------------------" << std::endl;
-	std::cout << "Base Class Animal with virtual: ";
-	meta->makeSound();
-	std::cout << "Base Class WrongAnimal without virtual: ";
-	cool->makeSound();
-	
 	return 0;
 }

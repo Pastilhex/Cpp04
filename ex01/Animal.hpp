@@ -23,7 +23,7 @@ public:
 	Animal( void );
 	Animal( const Animal& copy );
 	Animal& operator=( const Animal& input );
-	~Animal( void );
+	virtual ~Animal( void );
 	virtual void makeSound() const;
 	std::string getType( void ) const;
 };

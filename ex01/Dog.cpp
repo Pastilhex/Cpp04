@@ -15,7 +15,9 @@
 
 Dog::Dog( void ) : Animal() {
 	std::cout << "Default Dog Constructor called!" << std::endl;
+	std::cout << "Dog now has Brain!" << std::endl;
 	this->type = "Dog";
+	this->DogBrain = new Brain;
 }
 
 Dog::Dog( const Dog& copy ) : Animal(copy) {
@@ -30,6 +32,7 @@ Dog& Dog::operator=( const Dog& input ) {
 
 Dog::~Dog( void ) {
 	std::cout << "Dog destroyed!" << std::endl;
+	delete this->DogBrain;
 }
 
 void Dog::makeSound() const {
