@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:27:08 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/18 13:52:44 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:50:59 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~Cat( void );
 	void makeSound() const;
 	std::string getType( void );
+	void printIdeas() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:32:11 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/18 12:11:09 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:14:05 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,13 @@ Dog::Dog( void ) : Animal() {
 }
 
 Dog::Dog( const Dog& copy ) : Animal(copy) {
-	this->type = copy.type;
+	*this = copy;
 }
 
 Dog& Dog::operator=( const Dog& input ) {
 	if (this != &input )
 		this->type = input.type;
+	this->DogBrain = new Brain(*input.DogBrain);
 	return *this;
 }
 
@@ -41,4 +42,10 @@ void Dog::makeSound() const {
 
 std::string Dog::getType( void ) {
 	return this->type;
+}
+
+void Dog::printIdeas() const
+{
+	for (int i = 0; i < 100; i++)
+		std::cout << this->DogBrain->ideas[i];
 }

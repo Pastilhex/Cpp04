@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:40:19 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/18 12:10:50 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/22 15:52:58 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,13 @@ Cat::Cat( void ) : Animal() {
 }
 
 Cat::Cat( const Cat& copy ) : Animal(copy) {
-	this->type = copy.type;
-	Brain* CatBrain = new Brain;
-	for (int i = 0; i < 100; i++)
-		CatBrain->ideas[i] = copy.CatBrain->ideas[i];
+	*this = copy;
 }
 
 Cat& Cat::operator=( const Cat& input ) {
 	if (this != &input )
 		this->type = input.type;
-	for (int i = 0; i < 100; i++)
-		CatBrain->ideas[i] = input.CatBrain->ideas[i];
+	this->CatBrain = new Brain(*input.CatBrain);
 	return *this;
 }
 
@@ -47,4 +43,10 @@ void Cat::makeSound() const {
 
 std::string Cat::getType( void ) {
 	return this->type;
+}
+
+void Cat::printIdeas() const
+{
+	for (int i = 0; i < 100; i++)
+		std::cout << this->CatBrain->ideas[i];
 }

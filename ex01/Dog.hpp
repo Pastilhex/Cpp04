@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:25:22 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/18 13:52:15 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/22 16:13:46 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~Dog( void );
 	void makeSound() const;
 	std::string getType( void );
+	void printIdeas() const;
 };
 
 #endif
