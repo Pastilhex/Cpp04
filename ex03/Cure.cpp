@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 13:28:50 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/18 13:03:47 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _WRONGANIMAL_
-# define _WRONGANIMAL_
+#include "Cure.hpp"
 
-#include <iostream>
-#include <string>
+Cure::Cure () {
 
-class WrongAnimal {
-protected:
-	std::string type;
-public:
-	WrongAnimal( void );
-	WrongAnimal( const WrongAnimal& copy );
-	WrongAnimal& operator=( const WrongAnimal& input );
-	~WrongAnimal( void );
-	void makeSound() const;
-	std::string getType( void ) const;
-};
+}
 
-#endif
+Cure::Cure ( const Cure& copy ) {
+
+}
+
+Cure& Cure::operator=( const Cure& input ) {
+
+}
+
+Cure::~Cure () {
+
+}

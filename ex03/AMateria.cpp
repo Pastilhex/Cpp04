@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:25:12 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 18:30:29 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _ANIMAL_
-# define _ANIMAL_
+#include "AMateria.hpp"
 
-#include <iostream>
-#include <string>
+AMateria::AMateria ( void ) {
+}
 
-class AAnimal {
-protected:
-	std::string type;
-public:
-	AAnimal( void );
-	AAnimal( const AAnimal& copy );
-	AAnimal& operator=( const AAnimal& input );
-	virtual ~AAnimal( void );
-	virtual void makeSound() const = 0;
-	std::string getType( void ) const;
-};
+AMateria::AMateria ( std::string const& type ) {
 
-#endif
+}
+
+AMateria& AMateria::operator=(std::string const & type) {
+    //if (this->type != type)
+    //    this->type = type;
+    //return *this;
+}
+
+std::string const& AMateria::getType() const {
+
+}

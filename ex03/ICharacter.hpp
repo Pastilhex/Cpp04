@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Character.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/18 13:26:57 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 15:36:55 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BRAIN_
-# define _BRAIN_
+#ifndef _CHARACTER_
+# define _CHARACTER_
 
 #include <iostream>
-#include <sstream>
+#include "AMateria.hpp"
 
-class Brain {
+class Character : public AMateria {
 public:
-	std::string ideas[100];
-	Brain( void );
-	Brain( const Brain& copy );
-	Brain& operator=( const Brain& input );
-	~Brain( void );
+    Character( );
+    Character( const Character& copy );
+    Character& operator=( const Character& input );
+    virtual ~Character();
+    virtual std::string const & getName() const = 0;
+    virtual void equip(AMateria* m) = 0;
+    virtual void unequip(int idx) = 0;
+    virtual void use(int idx, Character& target) = 0;
 };
 
 #endif

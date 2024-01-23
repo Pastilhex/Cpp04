@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:25:22 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 17:59:58 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _DOG_
-# define _DOG_
+#ifndef _MATSOURCE_
+# define _MATSOURCE_
 
-#include "Animal.hpp"
-#include "Brain.hpp"
+#include <iostream>
+#include "AMateria.hpp"
 
-class Dog : public AAnimal {
-private:
-	Brain* DogBrain;
+class IMateriaSource
+{
 public:
-	Dog( void );
-	Dog( const Dog& copy );
-	Dog& operator=( const Dog& input );
-	~Dog( void );
-	void makeSound() const;
-	std::string getType( void );
-	void printIdeas() const;
+    IMateriaSource();
+    IMateriaSource( const IMateriaSource& copy );
+    IMateriaSource& operator=(const IMateriaSource& input);
+    virtual ~IMateriaSource() {}
+    virtual void learnMateria(AMateria*) = 0;
+    virtual AMateria* createMateria(std::string const & type) = 0;
 };
 
 #endif
