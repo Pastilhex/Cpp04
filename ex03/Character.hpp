@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/23 18:44:41 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/23 18:27:21 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/23 18:43:27 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _CHARACTER_
+# define _CHARACTER_
+
 #include "AMateria.hpp"
+#include "ICharacter.hpp"
+#include <iostream>
 
-AMateria::AMateria ( void ) {
-}
+class ICharacter;
 
-AMateria::AMateria ( std::string const& type ) {
+class Character : public ICharacter {
+	
+};
 
-}
-
-AMateria& AMateria::operator=(std::string const & type) {
-    //if (this->type != type)
-    //    this->type = type;
-    return *this;
-}
-
-std::string const& AMateria::getType() const {
-	return this->type;
-}
+#endif

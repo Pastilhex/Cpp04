@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                     :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:41:24 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _CHARACTER_
-# define _CHARACTER_
+#ifndef _ICHARACTER_
+# define _ICHARACTER_
 
-#include <iostream>
 #include "AMateria.hpp"
 
-class Character : public AMateria {
+class ICharacter {
 public:
-    Character( );
-    Character( const Character& copy );
-    Character& operator=( const Character& input );
-    virtual ~Character();
+    ICharacter( );
+    ICharacter( const ICharacter& copy );
+    ICharacter& operator=( const ICharacter& input );
+    virtual ~ICharacter();
     virtual std::string const & getName() const = 0;
     virtual void equip(AMateria* m) = 0;
     virtual void unequip(int idx) = 0;
-    virtual void use(int idx, Character& target) = 0;
+    virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

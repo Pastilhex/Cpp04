@@ -1,5 +1,5 @@
 NAME = Polymorphism
-SRC = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongCat.cpp WrongAnimal.cpp Brain.cpp
+SRC = main.cpp AMateria.cpp Character.cpp Cure.cpp Ice.cpp ICharacter.cpp MateriaSource.cpp
 OBJ = $(SRC:.cpp=.o)
 CXX = c++
 FLAGSCXX = -Wall -Wextra -Werror -g -std=c++98

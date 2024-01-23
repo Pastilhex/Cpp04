@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                     :+:      :+:    :+:   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/23 18:45:00 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ICharacter.hpp"
 
-Character::Character () {
+ICharacter::ICharacter () {
 
 }
 
-Character::Character ( const Character& copy ) {
+ICharacter::ICharacter ( const ICharacter& copy ) {
 
 }
 
-Character& Character::operator=( const Character& input ) {
-
+ICharacter& ICharacter::operator=( const ICharacter& input ) {
+	return *this;
 }
 
-Character::~Character () {
+ICharacter::~ICharacter () {
 
 }
