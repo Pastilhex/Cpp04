@@ -12,8 +12,8 @@
 
 #include "Ice.hpp"
 
-Ice::Ice () {
-
+Ice::Ice ( void ) {
+    this->type = "Ice";
 }
 
 Ice::Ice ( const Ice& copy ) {

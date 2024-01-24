@@ -20,7 +20,8 @@
 class ICharacter;
 
 class Character : public ICharacter {
-	
+	std::string name;
+    AMateria inventory[4];
 };
 
 #endif

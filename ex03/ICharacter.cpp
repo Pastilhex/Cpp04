@@ -12,7 +12,7 @@
 
 #include "ICharacter.hpp"
 
-ICharacter::ICharacter () {
+ICharacter::ICharacter ( void ) {
 
 }
 
@@ -27,4 +27,3 @@ ICharacter& ICharacter::operator=( const ICharacter& input ) {
 ICharacter::~ICharacter () {
 
 }
-

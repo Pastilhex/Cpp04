@@ -23,6 +23,9 @@ public:
     Cure( const Cure& copy );
     Cure& operator=( const Cure& input );
     ~Cure( void );
+    std::string const & getType() const; // Returns the materia type
+    virtual AMateria* clone() const = 0; // Clone
+    virtual void use(ICharacter& target) = 0;
 };
 
 

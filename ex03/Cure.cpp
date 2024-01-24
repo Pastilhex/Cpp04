@@ -12,8 +12,8 @@
 
 #include "Cure.hpp"
 
-Cure::Cure () {
-
+Cure::Cure ( void ) {
+	this->type = "Cure";
 }
 
 Cure::Cure ( const Cure& copy ) {

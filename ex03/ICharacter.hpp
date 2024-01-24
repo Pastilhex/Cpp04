@@ -17,7 +17,7 @@
 
 class ICharacter {
 public:
-    ICharacter( );
+    ICharacter( void );
     ICharacter( const ICharacter& copy );
     ICharacter& operator=( const ICharacter& input );
     virtual ~ICharacter();
