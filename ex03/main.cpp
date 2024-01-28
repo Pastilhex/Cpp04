@@ -29,6 +29,7 @@ int main()
 	src->learnMateria(new Cure()); //Pos 5
 
 	ICharacter* me = new Character("me");
+	ICharacter* ivo = me;
 
 	AMateria* tmp;
 	AMateria* teste1 = Ice().clone();
@@ -48,14 +49,18 @@ int main()
 	tmp = src->createMateria("ice");
 	me->equip(tmp); //Pos 5
 
+	ivo->equip(tmp);
+
 	me->unequip(3);
 
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
 	me->use(1, *bob);
+	ivo->use(2, *bob);
 
 	delete bob;
 	delete me;
+	delete ivo;
 	delete src;
 
 	return 0;

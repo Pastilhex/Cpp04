@@ -27,8 +27,12 @@ Character::Character( const Character& copy ) {
 }
 
 Character& Character::operator=( const Character& input ) {
-	if (this != &input)
-		*this = input;
+	tmp = new Character;
+	if (this != &input) {
+		tmp->name = input.name;
+		for (int i = 0; i < 4; i++)
+			this->inventory[i] = NULL;
+	}
 	return *this;
 }
 
