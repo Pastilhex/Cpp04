@@ -6,24 +6,47 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 18:31:06 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/26 19:00:11 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-IMateriaSource::IMateriaSource () {
-
+MateriaSource::MateriaSource () {
+	for (int i = 0; i < 4; i++)
+		inventory[i] = NULL;
 }
 
-IMateriaSource::IMateriaSource ( const IMateriaSource& copy ) {
-
+MateriaSource::MateriaSource ( const MateriaSource& copy ) {
+	*this = copy;
 }
 
-IMateriaSource& IMateriaSource::operator=( const IMateriaSource& input ) {
-
+MateriaSource& MateriaSource::operator=( const MateriaSource& input ) {
+	if (this != &input)
+		*this = input;
+	return *this;
 }
 
-IMateriaSource::~IMateriaSource () {
+MateriaSource::~MateriaSource () {
+}
 
+void MateriaSource::learnMateria( AMateria* material ) {
+	for (int i = 0; i < 4; i++)
+		if (inventory[i] == NULL)
+		{
+			inventory[i] = material;
+			break;
+		}
+}
+
+AMateria* MateriaSource::createMateria( std::string const & type ) {
+	AMateria* tmp;
+	for (int i = 3; i >= 0; i--)
+		if (inventory[i] != NULL)
+			if (inventory[i]->getType() == type)
+			{
+				tmp = inventory[i];
+				return tmp;
+			}
+	return 0;
 }

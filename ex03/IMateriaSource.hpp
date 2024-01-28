@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/23 18:58:45 by ialves-m         ###   ########.fr       */
+/*   Created: 2024/01/24 17:52:12 by ialves-m          #+#    #+#             */
+/*   Updated: 2024/01/26 13:37:59 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ICharacter.hpp"
+#ifndef _IMATSOURCE_
+# define _IMATSOURCE_
 
-ICharacter::ICharacter ( void ) {
+#include <iostream>
+#include "AMateria.hpp"
 
-}
+class IMateriaSource
+{
+public:
+	virtual ~IMateriaSource() {};
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria(std::string const & type) = 0;
+};
 
-ICharacter::ICharacter ( const ICharacter& copy ) {
-
-}
-
-ICharacter& ICharacter::operator=( const ICharacter& input ) {
-	return *this;
-}
-
-ICharacter::~ICharacter () {
-
-}
+#endif
