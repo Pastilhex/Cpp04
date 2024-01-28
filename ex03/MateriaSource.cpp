@@ -35,6 +35,7 @@ void MateriaSource::learnMateria( AMateria* material ) {
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = material;
+			std::cout << "Learned " << inventory[i]->getType() << " in position " << i + 1 << std::endl;
 			break;
 		}
 }
@@ -45,6 +46,7 @@ AMateria* MateriaSource::createMateria( std::string const & type ) {
 		if (inventory[i] != NULL)
 			if (inventory[i]->getType() == type)
 			{
+				std::cout << "Created " << inventory[i]->getType() << " in position " << i + 1 << std::endl;
 				tmp = inventory[i];
 				return tmp;
 			}

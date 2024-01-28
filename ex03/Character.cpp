@@ -44,13 +44,16 @@ void Character::equip(AMateria* m) {
 		if (inventory[i] == NULL)
 		{
 			inventory[i] = m;
+			std::cout << "*Equiped " << inventory[i]->getType() << " in position " << i + 1 << std::endl;
 			break;
 		}
 }
 
 void Character::unequip(int idx) {
-	if (idx >= 0 && idx < 4 && inventory[idx] != NULL)
+	if (idx >= 0 && idx < 4 && inventory[idx] != NULL) {
+		std::cout << "Unquiped " << inventory[idx]->getType() << " in position " << idx + 1 << std::endl;
 		inventory[idx] = NULL;
+	}
 }
 
 void Character::use(int idx, ICharacter& target) {

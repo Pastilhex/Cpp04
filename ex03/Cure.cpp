@@ -15,7 +15,7 @@
 #include "ICharacter.hpp"
 
 Cure::Cure ( void ) {
-	this->type = "Cure";
+	this->type = "cure";
 }
 
 Cure::Cure ( const Cure& copy ) : AMateria (copy) {
@@ -40,5 +40,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 }

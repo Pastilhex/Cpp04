@@ -15,7 +15,7 @@
 #include "ICharacter.hpp"
 
 Ice::Ice ( void ) {
-    this->type = "Ice";
+    this->type = "ice";
 }
 
 Ice::Ice ( const Ice& copy ) : AMateria (copy) {
