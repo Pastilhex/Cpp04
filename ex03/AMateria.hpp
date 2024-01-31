@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/26 16:49:29 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/29 14:26:49 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	AMateria( std::string const & type );
 	AMateria( const AMateria & copy );
 	AMateria& operator=( const AMateria & input );
-	~AMateria( void );
+	virtual ~AMateria();
 
 	std::string const & getType() const; // Returns the materia type
 	virtual AMateria* clone() const = 0; // Clone
