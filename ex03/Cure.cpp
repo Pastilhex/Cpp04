@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/31 10:35:19 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:35:54 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
-Cure::Cure ( void ) {
-	this->type = "cure";
+Cure::Cure () : AMateria ("cure") {
 }
 
 Cure::Cure ( const Cure& copy ) : AMateria (copy) {
@@ -29,10 +28,6 @@ Cure& Cure::operator=( const Cure& input ) {
 }
 
 Cure::~Cure () {
-}
-
-std::string const & Cure::getType() const {
-	return this->type;
 }
 
 AMateria* Cure::clone() const {

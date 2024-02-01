@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/31 11:08:33 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:50:38 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 MateriaSource::MateriaSource () {
 	for (int i = 0; i < 4; i++)
-		this->inventory[i] = NULL;
+		this->materiaBook[i] = NULL;
 }
 
 MateriaSource::MateriaSource ( const MateriaSource& copy ) {
@@ -28,18 +28,17 @@ MateriaSource& MateriaSource::operator=( const MateriaSource& input ) {
 }
 
 MateriaSource::~MateriaSource () {
-	delete this->inventory[0];
-	delete this->inventory[1];
-	delete this->inventory[2];
-	delete this->inventory[3];
+	for (int i = 0; i < 4; i++)
+		if (this->materiaBook[i] != NULL)
+			delete this->materiaBook[i];
 }
 
 void MateriaSource::learnMateria( AMateria* material ) {
 	for (int i = 0; i < 4; i++)
-		if (this->inventory[i] == NULL)
+		if (this->materiaBook[i] == NULL)
 		{
-			this->inventory[i] = material;
-			std::cout << "Learned " << this->inventory[i]->getType() << " in position " << i + 1 << std::endl;
+			this->materiaBook[i] = material;
+			std::cout << "Learned " << this->materiaBook[i]->getType() << " in position " << i + 1 << std::endl;
 			return;
 		}
 	delete material;
@@ -47,12 +46,12 @@ void MateriaSource::learnMateria( AMateria* material ) {
 
 AMateria* MateriaSource::createMateria( std::string const & type ) {
 	AMateria* tmp;
-	for (int i = 3; i >= 0; i--)
-		if (this->inventory[i] != NULL)
-			if (this->inventory[i]->getType() == type)
+	for (int i = 0; i < 4; i++)
+		if (this->materiaBook[i] != NULL)
+			if (this->materiaBook[i]->getType() == type)
 			{
-				std::cout << "Created " << this->inventory[i]->getType() << " in position " << i + 1 << std::endl;
-				tmp = this->inventory[i];
+				std::cout << "Created " << this->materiaBook[i]->getType() << " in position " << i + 1 << std::endl;
+				tmp = materiaBook[i]->clone();
 				return tmp;
 			}
 	return 0;

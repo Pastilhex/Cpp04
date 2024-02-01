@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/31 11:13:03 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:52:12 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,32 +28,30 @@ int main()
 	src->learnMateria(new Cure());
 	src->learnMateria(new Cure());
 
-	ICharacter* me = new Character("me");
+	ICharacter* me = new Character("joao");
 
 	Character ivo("ivo");
-	Character joao = ivo;
 
-	AMateria* teste1 = Ice().clone();
-	AMateria* teste2 = teste1->clone();
-	AMateria* tmp(teste2);
+	AMateria* teste1;
+	AMateria* teste2;
+	AMateria* teste3;
 
-	std::cout << "Clone Type: " << teste1->getType() << std::endl;
-	std::cout << "Clone Type: " << teste2->getType() << std::endl;
-	std::cout << "Clone Type: " << tmp->getType() << std::endl;
+	teste1 = src->createMateria("ice");
+	me->equip(teste1);
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
+	teste2 = src->createMateria("cure");
+	me->equip(teste2);
 
-	ivo.equip(tmp);
+	teste3 = src->createMateria("ice");
+	me->equip(teste3);
+
+	ivo.equip(teste2);
 	me->unequip(3);
+
+	ivo.printInventory();
+
+	Character joao = ivo;
+	joao.printInventory();
 
 	ICharacter* bob = new Character("bob");
 	me->use(0, *bob);
@@ -65,6 +63,7 @@ int main()
 	delete src;
 	delete teste1;
 	delete teste2;
+	delete teste3;
 
 	return 0;
 }

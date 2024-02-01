@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 14:24:23 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/29 14:26:49 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:43:33 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define _AMATERIA_
 
 #include <iostream>
+#include <cstring>
 
 class ICharacter;
 
@@ -21,14 +22,11 @@ class AMateria {
 protected:
     std::string type;
 public:
-	AMateria( void );
 	AMateria( std::string const & type );
-	AMateria( const AMateria & copy );
-	AMateria& operator=( const AMateria & input );
 	virtual ~AMateria();
 
-	std::string const & getType() const; // Returns the materia type
-	virtual AMateria* clone() const = 0; // Clone
+	std::string const & getType() const;
+	virtual AMateria* clone() const = 0;
 	virtual void use(ICharacter& target) = 0;
 };
 

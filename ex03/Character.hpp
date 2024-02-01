@@ -6,7 +6,7 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:27:21 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/31 11:20:14 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:20:03 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
-#include <iostream>
 
 class ICharacter;
 
@@ -29,12 +28,13 @@ public:
 	Character& operator=( const Character& input );
 	~Character( void );
 
+	void printInventory();
     AMateria* inventory[4];
     AMateria* floor[4];
-    virtual std::string const & getName() const;
-    virtual void equip(AMateria* m);
-    virtual void unequip(int idx);
-    virtual void use(int idx, ICharacter& target);
+    std::string const & getName() const;
+    void equip(AMateria* m);
+    void unequip(int idx);
+    void use(int idx, ICharacter& target);
 };
 
 #endif

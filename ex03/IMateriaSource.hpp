@@ -6,14 +6,13 @@
 /*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 17:52:12 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/26 13:37:59 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:31:10 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _IMATSOURCE_
 # define _IMATSOURCE_
 
-#include <iostream>
 #include "AMateria.hpp"
 
 class IMateriaSource
