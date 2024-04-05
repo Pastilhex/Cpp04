@@ -3,36 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ialves-m <ialves-m@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ialves-m <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/18 13:38:13 by ialves-m          #+#    #+#             */
-/*   Updated: 2024/01/22 15:41:36 by ialves-m         ###   ########.fr       */
+/*   Updated: 2024/04/05 08:08:11 by ialves-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
 
-Brain::Brain( void ) {
-	for (int i = 0; i < 100; i++) {
-		std::stringstream value;
-		value << i + 1;
-		std::string index = value.str();
-		this->ideas[i] = "Brain expanding " + index + "%\n";
-	}
+Brain::Brain(void)
+{
 	std::cout << "Brain Class Activated!!!" << std::endl;
 }
 
-Brain::Brain( const Brain& copy ) {
-	*this = copy;
+Brain::Brain(const Brain &copy)
+{
+	std::cout << "Brain Copy Constructor Called!!!" << std::endl;
+	std::copy(copy.ideas->begin(), copy.ideas->end(), this->ideas->begin());
 }
 
-Brain& Brain::operator=( const Brain& input ) {
+Brain &Brain::operator=(const Brain &input)
+{
+	std::cout << "Brain Copy Assignment Operator Called!!!" << std::endl;
 	if (this != &input)
-		for (int i = 0; i < 100; i++)
-			this->ideas[i] = input.ideas[i];
+		std::copy(input.ideas->begin(), input.ideas->end(), this->ideas->begin());
 	return *this;
 }
 
-Brain::~Brain( void ) {
+Brain::~Brain(void)
+{
 	std::cout << "Brain Class Deactivated!!!" << std::endl;
 }
